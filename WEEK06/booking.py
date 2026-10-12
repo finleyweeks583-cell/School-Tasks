@@ -14,7 +14,7 @@ hours = input("Hours needed: ")
 
 if hours.isdigit() == False:
     print("Digits only")
-elif hours.isdigit < 1 or hours > 8:
+elif hours < 1 or hours > 8:
     print("Hours cannot be less than 1 or more than 8")
 
 print("Booked:", name, ref, hours)
