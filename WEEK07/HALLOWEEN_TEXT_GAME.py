@@ -1,4 +1,6 @@
 import time 
+import pyfiglet
+
 
 valid_input = False
 valid_input_2 = False
@@ -12,13 +14,35 @@ LOCATION_TWO = "PLACEHOLDER2"
 LOCATION_THREE = "PLACEHOLDER3"
 LOCATION_FOUR = "PLACEHOLDER4"
 
+
+
+def DARK_FOREST():
+    print("Loading.....")
+    print()
+    time.sleep(0.7)
+    print("Loading....")
+    print()
+    time.sleep(0.5)
+    print("Loading...")
+    print()
+    time.sleep(0.5)
+    print("Loading..")
+    print()
+    time.sleep(0.25)
+    print(f"Entering the {LOCATION_ONE}")
+    print()
+    time.sleep(2)
+
+
 while (not GAME_RESET):
+
+    
+
     print()
     PLAYER_NAME = input("Please enter your characters name: ")
-    print()
-
+    welcome_text = pyfiglet.figlet_format(f"WELCOME TO THE GAME !", font = 'doom')
     time.sleep(1)
-    print(f"Welcome to the game {PLAYER_NAME}")
+    print("\033[91m" + welcome_text + "\033[0m")
     print()
 
     time.sleep(1.25)
@@ -40,9 +64,8 @@ while (not GAME_RESET):
             GAME_RESET = True
             print("You exit the cell and infrot of you lays a dark dirt path surrounded by tall trees with only the faint shine of moonlight throught the thick leaves")
             print()
-            print(f"Entering the {LOCATION_ONE}")
-            time.sleep(3)
-
+            time.sleep(2)
+            DARK_FOREST()
        
 
         elif user_input_cell == "B":
@@ -75,8 +98,9 @@ while (not GAME_RESET):
                     time.sleep(0.5)
                     print("After drinking the water you exit the cell and infrot of you lays a dark dirt path surrounded by tall trees with only the faint shine of moonlight throught the thick leaves")
                     print()
-                    print(f"Entering the {LOCATION_ONE}")
-                    time.sleep(3)
+                    time.sleep(2)
+                    DARK_FOREST()
+                   
                     
 
                 else:
@@ -89,3 +113,4 @@ while (not GAME_RESET):
             GAME_REST = True
             print("That is not a valid option, Please try again")
             valid_input = False
+
