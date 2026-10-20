@@ -4,7 +4,8 @@ import pyfiglet
 
 valid_input = False
 valid_input_2 = False
-GAME_RESET = False  
+GAME_RESET = False 
+
 
 MONEY = 10
 HEALTH = 100
@@ -17,6 +18,7 @@ LOCATION_FOUR = "PLACEHOLDER4"
 
 
 def DARK_FOREST():
+    PATH_CHOSEN = False 
     print("Loading.....")
     print()
     time.sleep(0.7)
@@ -29,9 +31,28 @@ def DARK_FOREST():
     print("Loading..")
     print()
     time.sleep(0.25)
-    print(f"Entering the {LOCATION_ONE}")
+    ENTER_DARK_FOREST = (pyfiglet.figlet_format(f"ENTERING THE DARK FOREST !", font = 'small'))
+    print("\033[32m" + ENTER_DARK_FOREST + "\033[0m")
     print()
     time.sleep(2)
+    print("As you walk through the forest path you reach a cross road, The left path seems to have more ware and used regularly whereas the right path is overgrown and looks barley used")
+    print()
+    time.sleep(3)
+
+    while (not PATH_CHOSEN):
+        path_choice = input("Which path will you go down, Left or Right: ").strip().upper()
+    
+        if path_choice == "LEFT":
+            PATH_CHOSEN = True 
+            print("went left")
+
+        elif path_choice == "RIGHT":
+            PATH_CHOSEN = True
+            print("went right")
+
+        else:
+            PATH_CHOSEN = False
+            print("That is not a valid option, please try again")
 
 
 while (not GAME_RESET):
@@ -101,8 +122,6 @@ while (not GAME_RESET):
                     time.sleep(2)
                     DARK_FOREST()
                    
-                    
-
                 else:
                     GAME_RESET = True
                     print("That is not a valid option, please try again")
