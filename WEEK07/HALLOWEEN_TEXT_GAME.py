@@ -10,9 +10,9 @@ GAME_RESET = False
 MONEY = 10
 HEALTH = 100
 
-LOCATION_ONE = "Dark Forest"
-LOCATION_TWO = "PLACEHOLDER2"
-LOCATION_THREE = "PLACEHOLDER3"
+LOCATION_ONE = "DARK FOREST"
+LOCATION_TWO = "CASTLE BAPHOMET"
+LOCATION_THREE = "THE CABIN IN THE WOODS"
 LOCATION_FOUR = "PLACEHOLDER4"
 
 
@@ -30,8 +30,8 @@ def DARK_FOREST():
     time.sleep(0.5)
     print("Loading..")
     print()
-    time.sleep(0.25)
-    ENTER_DARK_FOREST = (pyfiglet.figlet_format(f"ENTERING THE DARK FOREST !", font = 'small'))
+    time.sleep(0.5)
+    ENTER_DARK_FOREST = (pyfiglet.figlet_format(f"ENTERING THE {LOCATION_ONE} !", font = 'small'))
     print("\033[32m" + ENTER_DARK_FOREST + "\033[0m")
     print()
     time.sleep(2)
@@ -41,14 +41,42 @@ def DARK_FOREST():
 
     while (not PATH_CHOSEN):
         path_choice = input("Which path will you go down, Left or Right: ").strip().upper()
+        print()
+        time.sleep(1)
     
         if path_choice == "LEFT":
             PATH_CHOSEN = True 
-            print("went left")
+            print("Loading.....")
+            print()
+            time.sleep(0.7)
+            print("Loading....")
+            print()
+            time.sleep(0.5)
+            print("Loading...")
+            print()
+            time.sleep(0.5)
+            print("Loading..")
+            print()
+            time.sleep(0.5)
+            ENTER_CASTLE = (pyfiglet.figlet_format(F"ENTERING {LOCATION_TWO} ! ", font = 'small'))
+            print("\033[95m" + ENTER_CASTLE + "\033[0m")
 
         elif path_choice == "RIGHT":
             PATH_CHOSEN = True
-            print("went right")
+            print("Loading.....")
+            print()
+            time.sleep(0.7)
+            print("Loading....")
+            print()
+            time.sleep(0.5)
+            print("Loading...")
+            print()
+            time.sleep(0.5)
+            print("Loading..")
+            print()
+            time.sleep(0.5)            
+            ENTER_CABIN = (pyfiglet.figlet_format(F"ENTERING {LOCATION_THREE} ! ", font = 'DOOM'))
+            print("\033[33m" + ENTER_CABIN + "\033[0m")
 
         else:
             PATH_CHOSEN = False
