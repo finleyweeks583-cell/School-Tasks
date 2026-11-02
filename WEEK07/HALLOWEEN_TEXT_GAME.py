@@ -1,24 +1,97 @@
 import time 
+import pyfiglet
+
 
 valid_input = False
 valid_input_2 = False
-GAME_RESET = False  
+GAME_RESET = False 
+
 
 MONEY = 10
 HEALTH = 100
 
-LOCATION_ONE = "Dark Forest"
-LOCATION_TWO = "PLACEHOLDER2"
-LOCATION_THREE = "PLACEHOLDER3"
+LOCATION_ONE = "DARK FOREST"
+LOCATION_TWO = "CASTLE BAPHOMET"
+LOCATION_THREE = "THE CABIN IN THE WOODS"
 LOCATION_FOUR = "PLACEHOLDER4"
 
+
+
+def DARK_FOREST():
+    PATH_CHOSEN = False 
+    print("Loading.....")
+    print()
+    time.sleep(0.7)
+    print("Loading....")
+    print()
+    time.sleep(0.5)
+    print("Loading...")
+    print()
+    time.sleep(0.5)
+    print("Loading..")
+    print()
+    time.sleep(0.5)
+    ENTER_DARK_FOREST = (pyfiglet.figlet_format(f"ENTERING THE {LOCATION_ONE} !", font = 'small'))
+    print("\033[32m" + ENTER_DARK_FOREST + "\033[0m")
+    print()
+    time.sleep(2)
+    print("As you walk through the forest path you reach a cross road, The left path seems to have more ware and used regularly whereas the right path is overgrown and looks barley used")
+    print()
+    time.sleep(3)
+
+    while (not PATH_CHOSEN):
+        path_choice = input("Which path will you go down, Left or Right: ").strip().upper()
+        print()
+        time.sleep(1)
+    
+        if path_choice == "LEFT":
+            PATH_CHOSEN = True 
+            print("Loading.....")
+            print()
+            time.sleep(0.7)
+            print("Loading....")
+            print()
+            time.sleep(0.5)
+            print("Loading...")
+            print()
+            time.sleep(0.5)
+            print("Loading..")
+            print()
+            time.sleep(0.5)
+            ENTER_CASTLE = (pyfiglet.figlet_format(F"ENTERING {LOCATION_TWO} ! ", font = 'small'))
+            print("\033[95m" + ENTER_CASTLE + "\033[0m")
+
+        elif path_choice == "RIGHT":
+            PATH_CHOSEN = True
+            print("Loading.....")
+            print()
+            time.sleep(0.7)
+            print("Loading....")
+            print()
+            time.sleep(0.5)
+            print("Loading...")
+            print()
+            time.sleep(0.5)
+            print("Loading..")
+            print()
+            time.sleep(0.5)            
+            ENTER_CABIN = (pyfiglet.figlet_format(F"ENTERING {LOCATION_THREE} ! ", font = 'DOOM'))
+            print("\033[33m" + ENTER_CABIN + "\033[0m")
+
+        else:
+            PATH_CHOSEN = False
+            print("That is not a valid option, please try again")
+
+
 while (not GAME_RESET):
+
+    
+
     print()
     PLAYER_NAME = input("Please enter your characters name: ")
-    print()
-
+    welcome_text = pyfiglet.figlet_format(f"WELCOME TO THE GAME !", font = 'doom')
     time.sleep(1)
-    print(f"Welcome to the game {PLAYER_NAME}")
+    print("\033[91m" + welcome_text + "\033[0m")
     print()
 
     time.sleep(1.25)
@@ -40,9 +113,8 @@ while (not GAME_RESET):
             GAME_RESET = True
             print("You exit the cell and infrot of you lays a dark dirt path surrounded by tall trees with only the faint shine of moonlight throught the thick leaves")
             print()
-            print(f"Entering the {LOCATION_ONE}")
-            time.sleep(3)
-
+            time.sleep(2)
+            DARK_FOREST()
        
 
         elif user_input_cell == "B":
@@ -75,10 +147,9 @@ while (not GAME_RESET):
                     time.sleep(0.5)
                     print("After drinking the water you exit the cell and infrot of you lays a dark dirt path surrounded by tall trees with only the faint shine of moonlight throught the thick leaves")
                     print()
-                    print(f"Entering the {LOCATION_ONE}")
-                    time.sleep(3)
-                    
-
+                    time.sleep(2)
+                    DARK_FOREST()
+                   
                 else:
                     GAME_RESET = True
                     print("That is not a valid option, please try again")
@@ -89,3 +160,4 @@ while (not GAME_RESET):
             GAME_REST = True
             print("That is not a valid option, Please try again")
             valid_input = False
+
