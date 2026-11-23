@@ -1,0 +1,3 @@
+fern,12
+cactus,5
+ivy,0
